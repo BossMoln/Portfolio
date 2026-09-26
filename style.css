@@ -1,27 +1,4 @@
 :root {
-  --bg: #FFFFFF;
-  --bg-alt: #F4F4F4;
-  --text: #0A0A0A;
-  --text-muted: #6B6B6B;
-  --border: #D9D9D9;
-  --invert-bg: #0A0A0A;
-  --invert-text: #FFFFFF;
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0A0A0A;
-    --bg-alt: #161616;
-    --text: #F5F5F5;
-    --text-muted: #9A9A9A;
-    --border: #2E2E2E;
-    --invert-bg: #F5F5F5;
-    --invert-text: #0A0A0A;
-  }
-}
-:root[data-theme="dark"] {
   --bg: #0A0A0A;
   --bg-alt: #161616;
   --text: #F5F5F5;
@@ -29,7 +6,11 @@
   --border: #2E2E2E;
   --invert-bg: #F5F5F5;
   --invert-text: #0A0A0A;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
 * { box-sizing: border-box; }
 html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
 html, body { height: 100%; }
@@ -103,7 +84,6 @@ main {
   border-bottom: 1px solid var(--border);
   scroll-margin-top: 64px;
 }
-/* FIX 1: Added padding-bottom so the user can scroll past the final card */
 .page:last-of-type { 
   border-bottom: none; 
   padding-bottom: 15vh; 
@@ -194,21 +174,19 @@ p { max-width: 62ch; }
 .skill-row .k { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 13px; flex: 0 0 140px; }
 .skill-row .v { flex: 1; }
 
-/* SKILL ROW ICONS - Hover scale and color animation */
 .skill-row i {
   color: var(--text-muted);
   transition: transform 0.25s ease, color 0.25s ease;
-  display: inline-block; /* Ensures the transform scaling works smoothly */
+  display: inline-block; 
 }
 .skill-row i:hover {
   transform: scale(1.15);
-  color: var(--text); /* Adapts to light/dark theme automatically */
+  color: var(--text); 
 }
 
 .project {
   animation: appear 1s ease-out both;
   animation-timeline: view();
-  /* FIX 2: Lowered the cover threshold so the animation finishes much earlier in the scroll */
   animation-range: entry 5% cover 25%;
   border: 1px solid var(--border);
   padding: 28px;
@@ -231,7 +209,6 @@ p { max-width: 62ch; }
 .proj-desc { font-size: 15px; margin: 0 0 18px; }
 .proj-stack { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
-/* tech icon tooltips (font awesome + logo images) */
 .proj-stack i {
   font-size: 17px;
   color: var(--text-muted);
@@ -268,7 +245,6 @@ p { max-width: 62ch; }
   transform: translate(-50%, 0);
 }
 
-/* logo images */
 .proj-stack img {
   height: 26px;
   width: auto;
@@ -301,7 +277,6 @@ p { max-width: 62ch; }
   .skill-row .k { flex: none; }
 }
 
-/* Smoother up-and-scale animation */
 @keyframes appear{
   from{
     opacity: 0;
@@ -354,7 +329,6 @@ p { max-width: 62ch; }
   font-size: 13px;
 }
 
-/* Added tighter list spacing for polish */
 .education-table .details-cell ul {
   margin: 0;
   padding-left: 18px;
@@ -363,7 +337,6 @@ p { max-width: 62ch; }
 .education-table .placeholder-text { color: var(--text-muted); font-style: italic; }
 .emblem-cell { width: 68px; }
 
-/* Added subtle border radius for polish */
 .emblem-cell img,
 .emblem-placeholder {
   width: 75px;

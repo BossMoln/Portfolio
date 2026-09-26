@@ -142,54 +142,6 @@
     </div>
   </section>
 
-  <!-- <section class="page" id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <div class="proj-head">
-        <p class="proj-title">Dormitory Management System</p>
-        <a class="link-box" href="#" target="_blank" rel="noopener">+ add link</a>
-      </div>
-      <p class="proj-status">In progress — team of 8, final project</p>
-      <p class="proj-desc">A website for managing a dormitory end to end: rooms and tenants, payments, maintenance requests, and reports. Currently building out the admin side first — dashboard, rooms, and tenants are wireframed, with payments and maintenance in progress.</p>
-      <div class="proj-stack">
-        <i class="fa-brands fa-html5" data-tip="HTML"></i>
-        <i class="fa-brands fa-css3-alt" data-tip="CSS"></i>
-        <i class="fa-brands fa-js" data-tip="JavaScript"></i>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="proj-head">
-        <p class="proj-title">Small Business POS Simulation</p>
-        <a class="link-box" href="#" target="_blank" rel="noopener">Unfinished</a>
-      </div>
-      <p class="proj-status">Hold</p>
-      <p class="proj-desc">A point-of-sale simulation themed around a café, covering cart and checkout with receipts, inventory management, sales history, and role-based logins for cashiers and admins, with analytics charts for reporting.</p>
-      <div class="proj-stack">
-        <i class="fa-brands fa-html5" data-tip="HTML"></i>
-        <i class="fa-brands fa-css3-alt" data-tip="CSS"></i>
-        <i class="fa-brands fa-js" data-tip="JavaScript"></i>
-        <span data-tip="Chart.js" style="display: inline-flex;">
-          <img class="Chart-icon" src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/chartjs-gbwxkdn5urp4w5jg9xk4g5.png/chartjs-p7803bgd17hc5uxtz82i.png?_a=DATAiZAAZAA0" alt="Chart.js">
-        </span>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="proj-head">
-        <p class="proj-title">2D Horror Game</p>
-        <a class="link-box" href="#" target="_blank" rel="noopener">Unfinished</a>
-      </div>
-      <p class="proj-status">In progress — Phase 2 of 6</p>
-      <p class="proj-desc">A room-based horror game built in Scratch, with a flashlight system, hiding spots, and room-to-room navigation across 11 connected rooms. Monster AI with room-graph movement and detection logic is up next.</p>
-      <div class="proj-stack">
-        <span data-tip="Scratch" style="display: inline-flex;">
-          <img class="hover-black" src="https://1000logos.net/wp-content/uploads/2020/10/Scratch-Logo-2005.png" alt="Scratch">
-        </span>
-      </div>
-    </div> -->
-
     <div class="project">
       <div class="proj-head">
         <p class="proj-title">Canvas Odyssey</p>
@@ -213,12 +165,6 @@
   const ctx = canvas.getContext('2d');
   let w, h, dots;
 
-  function isDark() {
-    if (document.documentElement.getAttribute('data-theme') === 'dark') return true;
-    if (document.documentElement.getAttribute('data-theme') === 'light') return false;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
@@ -237,7 +183,7 @@
 
   function tick() {
     ctx.clearRect(0, 0, w, h);
-    const color = isDark() ? '245,245,245' : '10,10,10';
+    const color = '245,245,245';
     dots.forEach(d => {
       d.x += d.vx;
       d.y += d.vy;
